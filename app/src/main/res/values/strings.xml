@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MyRuns1</string>
+    <string name="profile_photo">Profile Photo:</string>
+    <string name="Change">CHANGE</string>
+    <string name="Name">Name</string>
+    <string name="Your_Name">Your Name</string>
+    <string name="Email">Email</string>
+    <string name="Your_Email">Your Email</string>
+    <string name="phone">Phone</string>
+    <string name="your_ph">Your Phone Number</string>
+    <string name="Gender">Gender</string>
+    <string name="Female">Female</string>
+    <string name="Male">Male</string>
+    <string name="Class">Class</string>
+    <string name="eg">eg. 2012</string>
+    <string name="Major">Major</string>
+    <string name="your_major">Your Major</string>
+    <string name="Save">SAVE</string>
+    <string name="Cancel">CANCEL</string>
+
+</resources>

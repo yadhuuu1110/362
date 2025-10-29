@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyRuns1</string>
+    <string name="app_name">MyRuns2</string>
     <string name="profile_photo">Profile Photo:</string>
     <string name="Change">CHANGE</string>
     <string name="Name">Name</string>
@@ -17,5 +17,40 @@
     <string name="your_major">Your Major</string>
     <string name="Save">SAVE</string>
     <string name="Cancel">CANCEL</string>
+    <string name="Input_Type">Input Type</string>
+    <string name="Activity_Type">Activity Type</string>
+    <string name="START">START</string>
+    <string name="Date">Date</string>
+    <string name="Time">Time</string>
+    <string name="Duration">Duration</string>
+    <string name="Distance">Distance</string>
+    <string name="Calories">Calories</string>
+    <string name="Heart_Rate">Heart Rate</string>
+    <string name="Comment">Comment</string>
+    <string name="SAVE">SAVE</string>
+    <string name="CANCEL">CANCEL</string>
+
+    <string-array name="input">
+        <item>Manual Entry</item>
+        <item>GPS</item>
+        <item>Automatic</item>
+    </string-array>
+    <string-array name="activity">
+        <item>Running</item>
+        <item>Walking</item>
+        <item>Standing</item>
+        <item>Cycling</item>
+        <item>Hiking</item>
+        <item>Downhill Skiing</item>
+        <item>Cross-Country Skiing</item>
+        <item>Snowboarding</item>
+        <item>Skating</item>
+        <item>Swimming</item>
+        <item>Mountain Biking</item>
+        <item>Wheelchair</item>
+        <item>Elliptical</item>
+        <item>Other</item>
+
+    </string-array>
 
 </resources>

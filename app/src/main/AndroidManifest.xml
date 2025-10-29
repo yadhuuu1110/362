@@ -15,7 +15,7 @@
         android:theme="@style/Theme.MyRuns1">
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="myRuns1Provider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -23,7 +23,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".MainActivity"
             android:exported="true" >
 
             <intent-filter>
@@ -34,10 +34,13 @@
 
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ProfileActivity"
             android:exported="false">
 
         </activity>
+
+        <activity android:name=".ManualActivity" />
+        <activity android:name=".MapActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout="@android:layout/simple_list_item_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <PreferenceCategory
+        android:title="Account Preferences"/>
+
+    <Preference
+        android:key="account_pref"
+        android:title="Name, Email, Class, etc"
+        android:summary="User Profile" />
+
+    <CheckBoxPreference
+        android:key="privacy_setting"
+        android:title="Privacy Setting"
+        android:summary="Posting your records anonymously"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:title="Additional Settings" />
+
+    <ListPreference
+        android:key="unit_pref"
+        android:title="Unit Preference"
+        android:summary="Select the units"
+        android:entries="@array/units"
+        android:entryValues="@array/units" />
+
+    <EditTextPreference
+        android:key="comments"
+        android:title="Comments"
+        android:summary="Please enter your comments"
+        android:dialogTitle="Enter Comments" />
+
+    <PreferenceCategory
+        android:title="Misc." />
+
+    <Preference
+        android:key="webpage"
+        android:title="Webpage"
+        android:summary="https://www.sfu.ca/computing.html" />
+</PreferenceScreen>

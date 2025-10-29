@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.yadhuChoudhary.myruns1"
+    namespace = "com.yadhuChoudhary.MyRuns2"
     compileSdk = 36
 
     defaultConfig {
@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.preference.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

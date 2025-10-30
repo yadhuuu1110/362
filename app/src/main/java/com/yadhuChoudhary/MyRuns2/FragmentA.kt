@@ -26,7 +26,7 @@ class FragmentA : Fragment() {
             requireContext(), R.array.input,
             android.R.layout.simple_spinner_item
         ).also {
-            adapter ->
+                adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinnerInput.adapter = adapter
         }
@@ -36,19 +36,24 @@ class FragmentA : Fragment() {
             R.array.activity,
             android.R.layout.simple_spinner_item
         ).also {
-            adapter ->
+                adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinnerActivity.adapter = adapter
         }
 
         btnStart.setOnClickListener {
-            val inputType = spinnerInput.selectedItem.toString()
+            val inputType = spinnerInput.selectedItemPosition
+            val activityType = spinnerActivity.selectedItemPosition
 
-            if (inputType == "Manual Entry") {
+            if (inputType == Constants.INPUT_TYPE_MANUAL) {
                 val intent = Intent(requireContext(), ManualActivity::class.java)
+                intent.putExtra(Constants.EXTRA_INPUT_TYPE, inputType)
+                intent.putExtra(Constants.EXTRA_ACTIVITY_TYPE, activityType)
                 startActivity(intent)
             } else {
                 val intent = Intent(requireContext(), MapActivity::class.java)
+                intent.putExtra(Constants.EXTRA_INPUT_TYPE, inputType)
+                intent.putExtra(Constants.EXTRA_ACTIVITY_TYPE, activityType)
                 startActivity(intent)
             }
         }

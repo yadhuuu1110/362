@@ -41,6 +41,10 @@
 
         <activity android:name=".ManualActivity" />
         <activity android:name=".MapActivity" />
+        <activity
+            android:name=".DisplayEntryActivity"
+            android:label="Entry Details"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

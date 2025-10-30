@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         myMyFragmentStateAdapter = MyFragmentStateAdapter(this, fragments)
         viewPager2.adapter = myMyFragmentStateAdapter
 
+        // Set offscreen page limit to keep all fragments in memory
+        viewPager2.offscreenPageLimit = 2
+
         tabConfigurationStrategy = TabConfigurationStrategy {
                 tab: TabLayout.Tab, position: Int ->
             tab.text = tabTitles[position] }

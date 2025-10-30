@@ -26,11 +26,15 @@ class FragmentB : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_b, container, false)
-
         listView = view.findViewById(R.id.list_view_history)
+        return view
+    }
 
-        // Initialize ViewModel
-        viewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialize ViewModel - scope to activity so it's shared across fragments
+        viewModel = ViewModelProvider(requireActivity())[ExerciseViewModel::class.java]
 
         // Setup adapter
         adapter = ExerciseEntryAdapter(requireContext(), exercises)
@@ -58,8 +62,16 @@ class FragmentB : Fragment() {
             intent.putExtra(Constants.EXTRA_EXERCISE_ID, exercise.id)
             startActivity(intent)
         }
+    }
 
-        return view
+    override fun onResume() {
+        super.onResume()
+        // Refresh the list when fragment becomes visible again
+        viewModel.allExercises.value?.let { exerciseList ->
+            exercises.clear()
+            exercises.addAll(exerciseList)
+            adapter.notifyDataSetChanged()
+        }
     }
 }
 

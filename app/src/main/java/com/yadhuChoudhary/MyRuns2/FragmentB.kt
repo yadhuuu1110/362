@@ -9,16 +9,16 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
-import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import java.text.SimpleDateFormat
 import java.util.*
 
 class FragmentB : Fragment() {
 
     private lateinit var listView: ListView
-    private lateinit var repository: ExerciseRepository
     private var exercises = mutableListOf<ExerciseEntry>()
     private lateinit var adapter: ExerciseEntryAdapter
+    private lateinit var viewModel: ExerciseViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,22 +29,21 @@ class FragmentB : Fragment() {
 
         listView = view.findViewById(R.id.list_view_history)
 
-        // Initialize database and repository
-        val database = ExerciseDatabase.getDatabase(requireContext())
-        repository = ExerciseRepository(database.exerciseDao())
+        // Initialize ViewModel
+        viewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
 
         // Setup adapter
         adapter = ExerciseEntryAdapter(requireContext(), exercises)
         listView.adapter = adapter
 
         // Observe database changes
-        repository.allExercises.observe(viewLifecycleOwner, Observer { exerciseList ->
+        viewModel.allExercises.observe(viewLifecycleOwner) { exerciseList ->
             exerciseList?.let {
                 exercises.clear()
                 exercises.addAll(it)
                 adapter.notifyDataSetChanged()
             }
-        })
+        }
 
         // Setup item click listener
         listView.setOnItemClickListener { _, _, position, _ ->

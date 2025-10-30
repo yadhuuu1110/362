@@ -32,11 +32,9 @@ class DisplayEntryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_entry)
 
-        // Ensure status bar (notification bar) is visible
-        window.decorView.systemUiVisibility = 0
-
         // Set title without back button
         supportActionBar?.title = "Entry Details"
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         initializeViews()
 

@@ -1,6 +1,6 @@
 <resources>
     <string-array name="units">
-        <item>Kilometers</item>
-        <item>Miles</item>
+        <item>Metric (Kilometers)</item>
+        <item>Imperial (Miles)</item>
     </string-array>
 </resources>

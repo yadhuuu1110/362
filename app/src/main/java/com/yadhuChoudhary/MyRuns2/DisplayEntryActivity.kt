@@ -33,7 +33,7 @@ class DisplayEntryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_display_entry)
 
         // Set title without back button
-        supportActionBar?.title = "Entry Details"
+        supportActionBar?.title = "MyRuns3"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         initializeViews()
@@ -58,7 +58,6 @@ class DisplayEntryActivity : AppCompatActivity() {
         tvDistance = findViewById(R.id.tv_display_distance)
         tvCalories = findViewById(R.id.tv_display_calories)
         tvHeartRate = findViewById(R.id.tv_display_heart_rate)
-        tvComment = findViewById(R.id.tv_display_comment)
     }
 
     private fun loadExerciseEntry() {
@@ -111,9 +110,6 @@ class DisplayEntryActivity : AppCompatActivity() {
 
         // Heart Rate
         tvHeartRate.text = "${exercise.heartRate.toInt()} bpm"
-
-        // Comment
-        tvComment.text = if (exercise.comment.isEmpty()) "No comment" else exercise.comment
     }
 
     override fun onCreateOptionsMenu(menu: android.view.Menu?): Boolean {
@@ -124,22 +120,11 @@ class DisplayEntryActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_delete -> {
-                showDeleteConfirmationDialog()
+                deleteExerciseEntry()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun showDeleteConfirmationDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Delete Exercise")
-            .setMessage("Are you sure you want to delete this exercise entry?")
-            .setPositiveButton("Delete") { _, _ ->
-                deleteExerciseEntry()
-            }
-            .setNegativeButton("Cancel", null)
-            .show()
     }
 
     private fun deleteExerciseEntry() {

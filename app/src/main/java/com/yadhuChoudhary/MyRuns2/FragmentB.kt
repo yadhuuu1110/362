@@ -92,7 +92,7 @@ class ExerciseEntryAdapter(
         val tvFirstRow = view.findViewById<TextView>(R.id.tv_first_row)
         val tvSecondRow = view.findViewById<TextView>(R.id.tv_second_row)
 
-        // First row: Input Type: Activity Type, Date
+        // First row: Input Type- Activity Type, Date and Time
         val inputType = when (exercise.inputType) {
             Constants.INPUT_TYPE_MANUAL -> "Manual Entry"
             Constants.INPUT_TYPE_GPS -> "GPS"
@@ -107,6 +107,7 @@ class ExerciseEntryAdapter(
         }
 
         val dateStr = dateFormat.format(exercise.dateTime.time)
+        // Format: "Manual Entry- Downhill Skiing, 18:03:08 Oct 29 2025"
         tvFirstRow.text = "$inputType: $activityType, $dateStr"
 
         // Second row: Distance, Duration

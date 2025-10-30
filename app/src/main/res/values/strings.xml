@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyRuns2</string>
+    <string name="app_name">MyRuns3</string>
     <string name="profile_photo">Profile Photo:</string>
     <string name="Change">CHANGE</string>
     <string name="Name">Name</string>
@@ -29,6 +29,32 @@
     <string name="Comment">Comment</string>
     <string name="SAVE">SAVE</string>
     <string name="CANCEL">CANCEL</string>
+    <string name="manual_entry">Manual Entry</string>
+    <string name="input_type">Input Type</string>
+    <string name="activity_type">Activity type</string>
+    <string name="running">Running</string>
+    <string name="date_and_time">Date and time</string>
+    <string name="duration">Duration</string>
+    <string name="DateTime">Date and Time</string>
+    <string name="Dur">0secs</string>
+    <string name="distance">Distance</string>
+    <string name="_0_miles">0 Miles</string>
+    <string name="calories">Calories</string>
+    <string name="_0_cals">0 cals</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="_0_bpm">0 bpm</string>
+    <string name="EntryDetails">Entry Details</string>
+    <string name="Dist">Distance, Duration</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="duration1">Duration</string>
+    <string name="distance1">Distance</string>
+    <string name="calories1">Calories</string>
+    <string name="heart_rate1">Heart Rate</string>
+    <string name="comment">Comment</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="delete">DELETE</string>
 
     <string-array name="input">
         <item>Manual Entry</item>

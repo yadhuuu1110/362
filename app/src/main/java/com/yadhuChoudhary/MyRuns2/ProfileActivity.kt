@@ -51,7 +51,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        supportActionBar?.title = "MyRuns2"
+        supportActionBar?.title = "MyRuns3"
 
         buttonSave = findViewById(R.id.Save)
         buttonCancel = findViewById(R.id.Cancel)

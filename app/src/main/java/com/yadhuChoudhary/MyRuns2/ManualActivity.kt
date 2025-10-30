@@ -72,7 +72,7 @@ class ManualActivity : AppCompatActivity() {
         }
 
         tvDuration.setOnClickListener {
-            showNumberInputDialog("Duration", "Enter duration in minutes") {
+            showNumberInputDialog("Duration", "") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.duration = value * 60 // Convert minutes to seconds
                 // Keep the label as "Duration" - don't update the text
@@ -80,7 +80,7 @@ class ManualActivity : AppCompatActivity() {
         }
 
         tvDistance.setOnClickListener {
-            showNumberInputDialog("Distance", "Enter distance in miles") {
+            showNumberInputDialog("Distance", "") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.distance = value
                 // Keep the label as "Distance" - don't update the text
@@ -88,7 +88,7 @@ class ManualActivity : AppCompatActivity() {
         }
 
         tvCalories.setOnClickListener {
-            showNumberInputDialog("Calories", "Enter calories") {
+            showNumberInputDialog("Calories", "") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.calorie = value
                 // Keep the label as "Calories" - don't update the text
@@ -96,7 +96,7 @@ class ManualActivity : AppCompatActivity() {
         }
 
         tvHeartRate.setOnClickListener {
-            showNumberInputDialog("Heart Rate", "Enter heart rate (bpm)") {
+            showNumberInputDialog("Heart Rate", "") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.heartRate = value
                 // Keep the label as "Heart Rate" - don't update the text
@@ -104,7 +104,7 @@ class ManualActivity : AppCompatActivity() {
         }
 
         tvComment.setOnClickListener {
-            showTextInputDialog("Comment", currentEntry.comment) {
+            showTextInputDialog("Comment", "How did it go? Notes here.") {
                 currentEntry.comment = it
                 // Keep the label as "Comment" - don't update the text
             }

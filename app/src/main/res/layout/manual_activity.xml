@@ -25,7 +25,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Date"
+                android:text="@string/date"
                 android:textSize="16sp"
                 android:textColor="@android:color/black" />
 
@@ -42,7 +42,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Time"
+                android:text="@string/time"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:background="?android:attr/selectableItemBackground" />
@@ -60,7 +60,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Duration"
+                android:text="@string/duration1"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:background="?android:attr/selectableItemBackground" />
@@ -78,7 +78,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Distance"
+                android:text="@string/distance1"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:background="?android:attr/selectableItemBackground" />
@@ -96,7 +96,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Calories"
+                android:text="@string/calories1"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:background="?android:attr/selectableItemBackground" />
@@ -114,7 +114,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Heart Rate"
+                android:text="@string/heart_rate1"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:background="?android:attr/selectableItemBackground" />
@@ -132,7 +132,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Comment"
+                android:text="@string/comment"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:background="?android:attr/selectableItemBackground" />
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginEnd="4dp"
-            android:text="SAVE"
+            android:text="@string/save"
             android:textColor="@android:color/black"
             android:backgroundTint="#E0E0E0" />
 
@@ -167,7 +167,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="4dp"
-            android:text="CANCEL"
+            android:text="@string/cancel"
             android:textColor="@android:color/black"
             android:backgroundTint="#E0E0E0" />
     </LinearLayout>

@@ -13,7 +13,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
-        android:text="Manual Entry: Running, 16:42:00 Oct 27 2025" />
+        android:text="@string/EntryDetails" />
 
     <TextView
         android:id="@+id/tv_second_row"
@@ -22,6 +22,6 @@
         android:textSize="12sp"
         android:textColor="@android:color/darker_gray"
         android:layout_marginTop="4dp"
-        android:text="0 Miles, 0secs" />
+        android:text="@string/Dist" />
 
 </LinearLayout>

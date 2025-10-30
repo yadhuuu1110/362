@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="8dp">
+    android:paddingTop="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Input Type"
+            android:text="@string/input_type"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray" />
 
@@ -22,7 +22,7 @@
             android:id="@+id/tv_display_input_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Manual Entry"
+            android:text="@string/manual_entry"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Activity type"
+            android:text="@string/activity_type"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="16dp" />
@@ -46,7 +46,7 @@
             android:id="@+id/tv_display_activity_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Running"
+            android:text="@string/running"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"
@@ -61,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date and time"
+            android:text="@string/date_and_time"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="16dp" />
@@ -70,7 +70,7 @@
             android:id="@+id/tv_display_date_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="16:42:00 Oct 27 2025"
+            android:text="@string/DateTime"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Duration"
+            android:text="@string/duration"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="16dp" />
@@ -94,7 +94,7 @@
             android:id="@+id/tv_display_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0secs"
+            android:text="@string/Dur"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"
@@ -109,7 +109,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distance"
+            android:text="@string/distance"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="16dp" />
@@ -118,7 +118,7 @@
             android:id="@+id/tv_display_distance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0 Miles"
+            android:text="@string/_0_miles"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"
@@ -133,7 +133,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calories"
+            android:text="@string/calories"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="16dp" />
@@ -142,7 +142,7 @@
             android:id="@+id/tv_display_calories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0 cals"
+            android:text="@string/_0_cals"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"
@@ -157,7 +157,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Heart Rate"
+            android:text="@string/heart_rate"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="16dp" />
@@ -166,31 +166,7 @@
             android:id="@+id/tv_display_heart_rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0 bpm"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
-
-        <!-- Comment -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Comment"
-            android:textSize="12sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginTop="16dp" />
-
-        <TextView
-            android:id="@+id/tv_display_comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="No comment"
+            android:text="@string/_0_bpm"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:paddingTop="8dp"

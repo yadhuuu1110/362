@@ -57,7 +57,7 @@ class ManualActivity : AppCompatActivity() {
             DatePickerDialog(this, { _, year, month, day ->
                 cal.set(year, month, day)
                 currentEntry.dateTime = cal
-                tvDate.text = "$day/${month+1}/$year"
+                // Keep the label as "Date" - don't update the text
             }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
         }
 
@@ -67,7 +67,7 @@ class ManualActivity : AppCompatActivity() {
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
                 currentEntry.dateTime = cal
-                tvTime.text = String.format("%02d:%02d", hour, minute)
+                // Keep the label as "Time" - don't update the text
             }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
 
@@ -75,11 +75,7 @@ class ManualActivity : AppCompatActivity() {
             showNumberInputDialog("Duration", "Enter duration in minutes") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.duration = value * 60 // Convert minutes to seconds
-                if (value > 0) {
-                    tvDuration.text = "${value.toInt()} mins"
-                } else {
-                    tvDuration.text = "Duration"
-                }
+                // Keep the label as "Duration" - don't update the text
             }
         }
 
@@ -87,11 +83,7 @@ class ManualActivity : AppCompatActivity() {
             showNumberInputDialog("Distance", "Enter distance in miles") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.distance = value
-                if (value > 0) {
-                    tvDistance.text = "$value miles"
-                } else {
-                    tvDistance.text = "Distance"
-                }
+                // Keep the label as "Distance" - don't update the text
             }
         }
 
@@ -99,11 +91,7 @@ class ManualActivity : AppCompatActivity() {
             showNumberInputDialog("Calories", "Enter calories") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.calorie = value
-                if (value > 0) {
-                    tvCalories.text = "${value.toInt()} cals"
-                } else {
-                    tvCalories.text = "Calories"
-                }
+                // Keep the label as "Calories" - don't update the text
             }
         }
 
@@ -111,22 +99,14 @@ class ManualActivity : AppCompatActivity() {
             showNumberInputDialog("Heart Rate", "Enter heart rate (bpm)") {
                 val value = it.toDoubleOrNull() ?: 0.0
                 currentEntry.heartRate = value
-                if (value > 0) {
-                    tvHeartRate.text = "${value.toInt()} bpm"
-                } else {
-                    tvHeartRate.text = "Heart Rate"
-                }
+                // Keep the label as "Heart Rate" - don't update the text
             }
         }
 
         tvComment.setOnClickListener {
             showTextInputDialog("Comment", currentEntry.comment) {
                 currentEntry.comment = it
-                if (it.isNotEmpty()) {
-                    tvComment.text = it
-                } else {
-                    tvComment.text = "Comment"
-                }
+                // Keep the label as "Comment" - don't update the text
             }
         }
 

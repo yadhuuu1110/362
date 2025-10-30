@@ -2,7 +2,6 @@ package com.yadhuChoudhary.MyRuns2
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -22,7 +21,6 @@ class DisplayEntryActivity : AppCompatActivity() {
     private lateinit var tvCalories: TextView
     private lateinit var tvHeartRate: TextView
     private lateinit var tvComment: TextView
-    private lateinit var btnDelete: Button
 
     private lateinit var repository: ExerciseRepository
     private var exerciseId: Long = -1
@@ -34,8 +32,10 @@ class DisplayEntryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_entry)
 
-        // Enable back button
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        // Ensure status bar (notification bar) is visible
+        window.decorView.systemUiVisibility = 0
+
+        // Set title without back button
         supportActionBar?.title = "Entry Details"
 
         initializeViews()
@@ -50,8 +50,6 @@ class DisplayEntryActivity : AppCompatActivity() {
         if (exerciseId != -1L) {
             loadExerciseEntry()
         }
-
-        setupDeleteButton()
     }
 
     private fun initializeViews() {
@@ -63,7 +61,6 @@ class DisplayEntryActivity : AppCompatActivity() {
         tvCalories = findViewById(R.id.tv_display_calories)
         tvHeartRate = findViewById(R.id.tv_display_heart_rate)
         tvComment = findViewById(R.id.tv_display_comment)
-        btnDelete = findViewById(R.id.btn_delete)
     }
 
     private fun loadExerciseEntry() {
@@ -121,9 +118,18 @@ class DisplayEntryActivity : AppCompatActivity() {
         tvComment.text = if (exercise.comment.isEmpty()) "No comment" else exercise.comment
     }
 
-    private fun setupDeleteButton() {
-        btnDelete.setOnClickListener {
-            showDeleteConfirmationDialog()
+    override fun onCreateOptionsMenu(menu: android.view.Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_display_entry, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_delete -> {
+                showDeleteConfirmationDialog()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -157,16 +163,6 @@ class DisplayEntryActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 }

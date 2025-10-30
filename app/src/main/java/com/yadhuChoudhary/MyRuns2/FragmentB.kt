@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer
 import java.text.SimpleDateFormat
 import java.util.*
 
-//Ideas similar to ActiontabsKotlin
 class FragmentB : Fragment() {
 
     private lateinit var listView: ListView

@@ -6,8 +6,6 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.core.net.toUri
 import com.yadhuChoudhary.MyRuns3.ProfileActivity
-
-//Ideas similar to ActiontabsKotlin
 class FragmentC : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {

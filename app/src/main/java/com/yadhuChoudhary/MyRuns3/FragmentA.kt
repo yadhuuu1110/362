@@ -9,8 +9,6 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
-
-//Ideas similar to ActiontabsKotlin
 class FragmentA : Fragment() {
 
     override fun onCreateView(

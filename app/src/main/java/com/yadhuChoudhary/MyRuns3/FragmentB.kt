@@ -107,7 +107,7 @@ class ExerciseEntryAdapter(
         }
 
         val dateStr = dateFormat.format(exercise.dateTime.time)
-        // Format: "Manual Entry- Downhill Skiing, 18:03:08 Oct 29 2025"
+        // Format: "Manual Entry: Downhill Skiing, 18:03:08 Oct 29 2025"
         tvFirstRow.text = "$inputType: $activityType, $dateStr"
 
         // Second row: Distance, Duration

@@ -15,8 +15,6 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
 import java.util.ArrayList
-
-//Ideas similar to ActiontabsKotlin
 class MainActivity : AppCompatActivity() {
     private lateinit var fragmentA: FragmentA
     private lateinit var fragmentB: FragmentB

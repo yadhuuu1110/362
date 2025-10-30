@@ -17,6 +17,17 @@ class ManualActivity : AppCompatActivity() {
     private var currentEntry: ExerciseEntry = ExerciseEntry()
     private val dateFormat = SimpleDateFormat("HH:mm:ss MMM dd yyyy", Locale.getDefault())
 
+    companion object {
+        private const val KEY_INPUT_TYPE = "input_type"
+        private const val KEY_ACTIVITY_TYPE = "activity_type"
+        private const val KEY_DATE_TIME = "date_time"
+        private const val KEY_DURATION = "duration"
+        private const val KEY_DISTANCE = "distance"
+        private const val KEY_CALORIES = "calories"
+        private const val KEY_HEART_RATE = "heart_rate"
+        private const val KEY_COMMENT = "comment"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.manual_activity)
@@ -35,13 +46,18 @@ class ManualActivity : AppCompatActivity() {
         val btnSave: Button = findViewById(R.id.btn_save)
         val btnCancel: Button = findViewById(R.id.btn_cancel)
 
-        // Get input type and activity type from intent
-        val inputType = intent.getIntExtra(Constants.EXTRA_INPUT_TYPE, Constants.INPUT_TYPE_MANUAL)
-        val activityType = intent.getIntExtra(Constants.EXTRA_ACTIVITY_TYPE, 0)
+        // Restore saved state or create new entry
+        if (savedInstanceState != null) {
+            restoreState(savedInstanceState)
+        } else {
+            // Get input type and activity type from intent
+            val inputType = intent.getIntExtra(Constants.EXTRA_INPUT_TYPE, Constants.INPUT_TYPE_MANUAL)
+            val activityType = intent.getIntExtra(Constants.EXTRA_ACTIVITY_TYPE, 0)
 
-        currentEntry.inputType = inputType
-        currentEntry.activityType = activityType
-        currentEntry.dateTime = Calendar.getInstance()
+            currentEntry.inputType = inputType
+            currentEntry.activityType = activityType
+            currentEntry.dateTime = Calendar.getInstance()
+        }
 
         // Set initial display - just labels
         tvDate.text = "Date"
@@ -117,6 +133,36 @@ class ManualActivity : AppCompatActivity() {
         btnCancel.setOnClickListener {
             finish()
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        // Save all the current entry data
+        outState.putInt(KEY_INPUT_TYPE, currentEntry.inputType)
+        outState.putInt(KEY_ACTIVITY_TYPE, currentEntry.activityType)
+        outState.putLong(KEY_DATE_TIME, currentEntry.dateTime.timeInMillis)
+        outState.putDouble(KEY_DURATION, currentEntry.duration)
+        outState.putDouble(KEY_DISTANCE, currentEntry.distance)
+        outState.putDouble(KEY_CALORIES, currentEntry.calorie)
+        outState.putDouble(KEY_HEART_RATE, currentEntry.heartRate)
+        outState.putString(KEY_COMMENT, currentEntry.comment)
+    }
+
+    private fun restoreState(savedInstanceState: Bundle) {
+        currentEntry.inputType = savedInstanceState.getInt(KEY_INPUT_TYPE, Constants.INPUT_TYPE_MANUAL)
+        currentEntry.activityType = savedInstanceState.getInt(KEY_ACTIVITY_TYPE, 0)
+
+        val dateTimeMillis = savedInstanceState.getLong(KEY_DATE_TIME, Calendar.getInstance().timeInMillis)
+        currentEntry.dateTime = Calendar.getInstance().apply {
+            timeInMillis = dateTimeMillis
+        }
+
+        currentEntry.duration = savedInstanceState.getDouble(KEY_DURATION, 0.0)
+        currentEntry.distance = savedInstanceState.getDouble(KEY_DISTANCE, 0.0)
+        currentEntry.calorie = savedInstanceState.getDouble(KEY_CALORIES, 0.0)
+        currentEntry.heartRate = savedInstanceState.getDouble(KEY_HEART_RATE, 0.0)
+        currentEntry.comment = savedInstanceState.getString(KEY_COMMENT, "")
     }
 
     private fun showNumberInputDialog(title: String, hint: String, onResult: (String) -> Unit) {

@@ -1,49 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Ideas similar to ActiontabsKotlin -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:paddingTop="15dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/Input_Type"
-        android:textColor="#757575"
-        android:textSize="16sp" />
-
-    <Spinner
-        android:id="@+id/spinner_input"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"/>
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Activity_Type"
-        android:textColor="#757575"
-        android:textSize="16sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/Input_Type"
+            android:textColor="#757575"
+            android:textSize="16sp" />
 
-    <Spinner
-        android:id="@+id/spinner_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"/>
+        <Spinner
+            android:id="@+id/spinner_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"/>
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:text="@string/START"
-        android:textColor="@color/black"
-        app:backgroundTint="@color/button_grey"
-        app:cornerRadius="0dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Activity_Type"
+            android:textColor="#757575"
+            android:textSize="16sp"/>
 
-</LinearLayout>
+        <Spinner
+            android:id="@+id/spinner_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"/>
+
+        <!-- Spacer to push button to bottom when there's space -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="100dp" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/START"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/button_grey"
+            app:cornerRadius="0dp" />
+
+    </LinearLayout>
+
+</ScrollView>

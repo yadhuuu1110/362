@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyRuns1"
+rootProject.name = "MyRuns3"
 include(":app")
